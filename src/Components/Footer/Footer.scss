@@ -1,0 +1,34 @@
+.footer-container {
+    min-height: 10vh;
+    width:100vw;
+    background-color: #F2F0FF;
+    footer {
+        b {
+            color: azure;
+        }
+        a {
+            text-decoration: none;
+            color: #5252e2;
+        }
+        .links {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 15px;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1400px){
+
+}
+
+@media screen and (max-width: 768px){
+
+}
+
+
+@media screen and (max-width: 424px){
+
+}

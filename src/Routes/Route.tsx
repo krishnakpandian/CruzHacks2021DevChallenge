@@ -9,7 +9,7 @@ const Routes: React.FC = () => {
                 <Router>
                     <Switch>
                         <Route exact path="/" render={() => <Home />} />
-                        <Route exact path="/data" render={() => <Analytic />} />
+                        <Route exact path="/analytics" render={() => <Analytic />} />
                     </Switch>
                 </Router>
             </div>

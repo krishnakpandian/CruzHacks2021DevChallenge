@@ -1,0 +1,48 @@
+.form-container {
+    min-height:80vh;
+    .form-title {
+        font-size: 24px;
+        font-weight: 600;
+    }    
+    .submit {
+        background: #6F6FE8;
+        border-radius: 30px;
+        color: #ffffff;
+    }
+    .field {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        label {
+            color:#4A38F2;
+            font-weight: 800;
+            font-size: 18px;
+        }
+        textarea {
+            width:500px;
+            height:200px;
+        }
+    }
+    .field-radio {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+}
+
+
+
+@media screen and (max-width: 1400px){
+
+}
+
+@media screen and (max-width: 768px){
+
+}
+
+
+@media screen and (max-width: 424px){
+
+}

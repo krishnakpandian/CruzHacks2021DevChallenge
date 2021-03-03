@@ -7,7 +7,6 @@ const Home:React.FC = () => {
     return(
         <>
             <div className="home-view">
-                Home Page
                 <Navbar/>
                 <Form/>
                 <Footer/>

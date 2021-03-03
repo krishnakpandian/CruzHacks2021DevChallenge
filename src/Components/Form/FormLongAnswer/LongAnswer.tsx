@@ -1,12 +1,21 @@
 import React from 'react';
-import './LongAnswer.scss';
 
+interface props {
+    register: any,
+}
 
-const LongAnswer:React.FC = () => {
+const LongAnswer:React.FC<props> = ({register}: props) => {
     return(
         <>
-            <div className="long-answer-container">
-                Long Answer
+            <div className ="long-response-container">
+                <div className="field">
+                    <label htmlFor="whyCruzHacks">Why CruzHacks</label>
+                    <textarea id="whyCruzHacks" name="whyCruzHacks" ref={register({required: true})}/>
+                </div>
+                <div className="field">
+                    <label htmlFor="anythingElse">Anything Else</label>
+                    <textarea id="anythingElse" name="anythingElse" ref={register({maxLength: 500})}/>
+                </div>
             </div>
         </>
     );

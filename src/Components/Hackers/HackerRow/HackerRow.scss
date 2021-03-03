@@ -1,0 +1,44 @@
+.hacker-row-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height:10vh;
+    max-width: 100vw;
+    flex-shrink: 0;
+    border: 4px solid #000000;
+    .hacker-row-field {
+        width: 19.8vw;
+        overflow-x: hidden;
+    }
+}
+
+
+
+@media screen and (max-width: 1400px){
+    .hacker-row-container {
+        font-size:20px;
+        .hacker-row-field {
+            width: 20vw;
+            font-size: 20px;
+        }
+    }
+}
+
+@media screen and (max-width: 768px){
+    .hacker-row-container {
+        .hacker-row-field {
+            width: 19.8vw;
+            font-size:18px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 424px){
+    .hacker-row-container {
+        .hacker-row-field {
+            font-size: 12px;
+            width: 19.5vw;
+        }
+    }
+}

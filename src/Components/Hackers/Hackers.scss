@@ -1,0 +1,48 @@
+.hacker-container {
+    background-color: #6F6FE8;
+    .hacker-analytics-title {
+        padding-top:20px;
+        font-size: 24px;
+        .hacker-legend-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            height:10vh;
+            border: 4px solid #000000;
+            .hacker-legend-header {
+                width: 20vw;
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+        }
+    }
+    .hacker-table {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+}
+
+
+@media screen and (max-width: 1400px){
+
+}
+
+@media screen and (max-width: 768px){
+
+}
+
+
+@media screen and (max-width: 424px){
+    .hacker-container {
+        .hacker-analytics-title {
+            .hacker-legend-header {
+                font-size: 16px;
+            }
+        }
+    }
+}
