@@ -1,0 +1,19 @@
+{
+    "links": [
+        {"icon": "fa fa-linkedin fa-2x",
+        "link": "https://www.linkedin.com/in/krishna-kumar-pandian/"
+        },
+        {"icon": "fa fa-facebook fa-2x",
+            "link": "https://www.facebook.com/krishna.pandian.35/"
+        },
+        {"icon": "fa fa-mail-reply fa-2x",
+            "link": "mailto:krishnakpandian@gmail.com"
+        },
+        {"icon": "fa fa-twitter fa-2x",
+            "link": "https://twitter.com/krishnakpandian"
+        },
+        {"icon": "fa fa-github fa-2x",
+            "link": "https://github.com/krishnakpandian"
+        }
+    ]
+}

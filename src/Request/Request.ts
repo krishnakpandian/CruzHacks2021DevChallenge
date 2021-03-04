@@ -8,7 +8,7 @@ export async function getHackers(): Promise<hackerResults>{
         statusCode: 400,
         message: "Failed to Fetch"
     };
-    await fetch(proxyurl + process.env.REACT_APP_BACKEND + '/getHackers', {
+    await fetch(proxyurl + process.env.REACT_APP_BACKEND + '/api/getHackers', {
             method: 'GET',
             headers: { 'Content-type': 'application/json' }
         }).then(res => res.json()).then(data => {
@@ -16,6 +16,7 @@ export async function getHackers(): Promise<hackerResults>{
             response.results = data['results'].map((obj: hackerData) => ({ ...obj}));
             response.statusCode = data['statusCode'];
             response.message = data['message'];
+            response.count = data['count'] ? data['count'] : 0
     }).catch(error => {
         console.error("Error getting requests: ", error);
         return response;
@@ -30,7 +31,7 @@ export async function createHacker(hackerObj: hacker): Promise<newHacker>{
         statusCode: 400,
         message: "Failed to Fetch"
     };
-    await fetch(proxyurl + process.env.REACT_APP_BACKEND + '/createHacker', {
+    await fetch(proxyurl + process.env.REACT_APP_BACKEND + '/api/createHacker', {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
             body: JSON.stringify(hackerObj)

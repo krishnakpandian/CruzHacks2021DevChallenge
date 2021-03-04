@@ -18,7 +18,8 @@ export interface hackerData {
 export interface hackerResults {
     results: hackerData[],
     statusCode: number,
-    message: string
+    message: string,
+    count?: number
 }
 
 export interface newHacker {
