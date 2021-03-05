@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import ShortAnswer from './FormShortAnswer/ShortAnswer';
 import LongAnswer from './FormLongAnswer/LongAnswer';
 import Submitted from './Submitted/Submitted';
 import './Form.scss'
 import {useForm} from 'react-hook-form';
-import {hacker, hackerResults} from '../../Props/Props';
+import {hacker} from '../../Props/Props';
 import {createHacker} from '../../Request/Request';
 import validateHackerData from './validation';
 
@@ -30,9 +30,16 @@ const Form:React.FC = () => {
     const [loading, setloading] = useState<boolean>(false);
     const [hackerResponse, setHackerResponse] = useState<hacker>(initialHacker);
     const [error, setError] = useState<string>('');
-    const { register, watch,errors, handleSubmit } = useForm<hackerForm>();
+    const { register, watch, handleSubmit } = useForm<hackerForm>();
     const watchGender = watch("genderChoice");
     const watchUniversity = watch("isUCSC");
+    const watcher = watch();
+    
+    useEffect(() => {
+        window.scrollTo(0,0);
+    }, [error])
+
+    // Cretates a HackerObj
     const createHackerObj = (data: hackerForm) => {
         var hackerObj: hacker = {
             firstName: data.firstName,
@@ -48,6 +55,7 @@ const Form:React.FC = () => {
         return hackerObj;
     }
 
+    // Handles Submission and Validation
     const onSubmit = async (data: any) => {
         setloading(true);
         console.log("data", data);
@@ -66,18 +74,21 @@ const Form:React.FC = () => {
                 }
             }); 
         }     
+        else {
+            setError(res);
+        }
         setloading(false);  
     };
 
     return(
         <>
             <div className="form-container">
-                <div className="form-title">{!submitted ? "Apply to CruzHacks!" : "Congratulations on Applying to CruzHacks"}</div>
+                <div className="form-title">{!submitted ? "Apply to CruzHacks!" : "Congratulations on Applying to CruzHacks!"}</div>
                 {!submitted && <>
+                <div className="error">{error}</div>    
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <ShortAnswer {...{register, watchGender, watchUniversity}}/>
-                    <LongAnswer {...{register}} />
-                    {error}
+                    <ShortAnswer {...{register, watchGender, watchUniversity, watcher}}/>
+                    <LongAnswer {...{register, watcher}} />
                 <button className="submit" disabled={loading} type="submit">Submit</button>
                 </form>
                 </>

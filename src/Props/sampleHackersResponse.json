@@ -1,0 +1,25 @@
+{
+    "statusCode": 200,
+    "message": "ok",
+    "count": 2,
+    "results": [{
+        "firstName": "Krishna",
+        "lastName": "Pandian",
+        "age": 20,
+        "email": "krishnakpandian@gmail.com",
+        "gender": "Male",
+        "school": "UC Santa Cruz",
+        "whyCruzHacks": "Yes",
+        "anythingElse": "No"
+    },
+    {
+        "firstName": "Krishna Kumar",
+        "lastName": "Pandian",
+        "age": 200,
+        "email": "kpandian@ucsc.edu",
+        "gender": "Male",
+        "school": "UC Santa Cruz",
+        "whyCruzHacks": "Yes",
+        "anythingElse": "No"
+    }]
+}

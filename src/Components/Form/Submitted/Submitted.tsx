@@ -28,5 +28,21 @@ const Submitted:React.FC<hacker> = (response: hacker) => {
     );
 }
 
+interface props {
+    response: hacker,
+    field: string
+}
+
+const SubmittedField = ({response, field}: props) => {
+    function isObjKey<T>(key: any, obj: T): key is keyof T {
+        return key in obj;
+    }
+    return(
+        <>
+                <div className="form-field"> {field} </div>
+                <div className="form-field-response">{isObjKey(field,response) && response[field]}</div>
+        </>
+    )
+} 
 
 export default Submitted;

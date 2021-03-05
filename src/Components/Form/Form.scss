@@ -10,6 +10,11 @@
         color:#5252e2;
         margin-bottom: 15px;
     }    
+    .error {
+        color: #ff0000;
+        font-size:18px;
+        font-weight: 500;
+    }
     button.submit {
         font-size: 20px;
         color: #f3f3f3;
@@ -44,6 +49,16 @@
             max-width: 1000px;
             height:300px;
             margin-bottom: 20px;
+        }
+        .the-count {
+            display:flex;
+            width: 100%;
+            justify-content: flex-end;
+            padding: 0.1rem 0 0 0;
+            font-size: 0.875rem;
+            font-family: 'Open Sans', sans-serif;
+            font-size: 16px;
+            color: #3e32ac;
         }
     }
     .field-radio {

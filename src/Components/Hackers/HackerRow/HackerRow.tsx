@@ -1,5 +1,6 @@
 import React from 'react';
 import './HackerRow.scss';
+import HackerLegend from './HackerLegend';
 import {hackerData} from '../../../Props/Props';
 
 const HackerRow:React.FC<hackerData> = (props: hackerData) => {
