@@ -1,13 +1,14 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import ShortAnswer from './FormShortAnswer/ShortAnswer';
 import LongAnswer from './FormLongAnswer/LongAnswer';
 import Submitted from './Submitted/Submitted';
 import './Form.scss'
-import {useForm} from 'react-hook-form';
-import {hacker} from '../../Props/Props';
-import {createHacker} from '../../Request/Request';
+import { useForm } from 'react-hook-form';
+import { hacker } from '../../Props/Props';
+import { createHacker } from '../../Request/Request';
 import validateHackerData from './validation';
 
+// Create a new interface that includes the 2 additional conditional rendered questions
 interface hackerForm extends hacker {
     genderChoice: string,
     isUCSC: string
@@ -25,7 +26,7 @@ const initialHacker: hacker = {
     anythingElse: ''
 }
 
-const Form:React.FC = () => {
+const Form: React.FC = () => {
     const [submitted, setSubmitted] = useState<boolean>(false);
     const [loading, setloading] = useState<boolean>(false);
     const [hackerResponse, setHackerResponse] = useState<hacker>(initialHacker);
@@ -34,21 +35,22 @@ const Form:React.FC = () => {
     const watchGender = watch("genderChoice");
     const watchUniversity = watch("isUCSC");
     const watcher = watch();
-    
+
     useEffect(() => {
-        window.scrollTo(0,0);
+        // Reset to top of screen where error is displayed on error change
+        window.scrollTo(0, 0);
     }, [error])
 
-    // Cretates a HackerObj
+    // Cretates a HackerObj from hackerForm data
     const createHackerObj = (data: hackerForm) => {
         var hackerObj: hacker = {
             firstName: data.firstName,
             lastName: data.lastName,
             email: data.email,
             age: data.age,
-            school: data.isUCSC === 'true' ? 'UC Santa Cruz': data.school,
+            school: data.isUCSC === 'true' ? 'UC Santa Cruz' : data.school,
             major: data.major,
-            gender: data.genderChoice === 'other' ? data.gender: data.genderChoice,
+            gender: data.genderChoice === 'other' ? data.gender : data.genderChoice,
             whyCruzHacks: data.whyCruzHacks,
             anythingElse: data.anythingElse
         }
@@ -56,6 +58,7 @@ const Form:React.FC = () => {
     }
 
     // Handles Submission and Validation
+    // Disables loading button while submitting
     const onSubmit = async (data: any) => {
         setloading(true);
         console.log("data", data);
@@ -72,29 +75,29 @@ const Form:React.FC = () => {
                 else {
                     setError(res.message);
                 }
-            }); 
-        }     
+            });
+        }
         else {
             setError(res);
         }
-        setloading(false);  
+        setloading(false);
     };
 
-    return(
+    return (
         <>
             <div className="form-container">
                 <div className="form-title">{!submitted ? "Apply to CruzHacks!" : "Congratulations on Applying to CruzHacks!"}</div>
                 {!submitted && <>
-                <div className="error">{error}</div>    
-                <form onSubmit={handleSubmit(onSubmit)}>
-                    <ShortAnswer {...{register, watchGender, watchUniversity, watcher}}/>
-                    <LongAnswer {...{register, watcher}} />
-                <button className="submit" disabled={loading} type="submit">Submit</button>
-                </form>
+                    <div className="error">{error}</div>
+                    <form onSubmit={handleSubmit(onSubmit)}>
+                        <ShortAnswer {...{ register, watchGender, watchUniversity, watcher }} />
+                        <LongAnswer {...{ register, watcher }} />
+                        <button className="submit" disabled={loading} type="submit">Submit</button>
+                    </form>
                 </>
                 }
 
-                {submitted && <Submitted {...hackerResponse}/> }
+                {submitted && <Submitted {...hackerResponse} />}
             </div>
         </>
     );

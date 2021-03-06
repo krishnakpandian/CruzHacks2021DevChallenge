@@ -1,18 +1,18 @@
 import { hacker } from "../../Props/Props";
 
-function isAlphaNumeric(data:string) {
+function isAlphaNumeric(data: string) {
     const alphaNumeric = '^[a-zA-Z0-9 .\'?!,-]*$';
     return data.match(alphaNumeric);
 }
 
 // Checks for Number
-function isNumeric(data:any) {
+function isNumeric(data: any) {
     return isNaN(data);
 }
 
 
 // Returns error message is hacker object is invalid
-async function validateHackerData(hackerObj:hacker) {
+async function validateHackerData(hackerObj: hacker) {
     if (!hackerObj.firstName || !isAlphaNumeric(hackerObj.firstName) || hackerObj.firstName.length > 25) {
         return "First Name must be less than 25 Alphanumeric chararcters";
     }
@@ -22,7 +22,7 @@ async function validateHackerData(hackerObj:hacker) {
     if (isNumeric(hackerObj.age) || hackerObj.age > 100 || hackerObj.age < 13) {
         return "Invalid Age Inputted";
     }
-    if (hackerObj.email === '' || hackerObj.email.length > 50){
+    if (hackerObj.email === '' || hackerObj.email.length > 50) {
         return "Email must be valid and less than 50 characters";
     }
     if (!hackerObj.school || !isAlphaNumeric(hackerObj.school) || hackerObj.school.length > 50) {

@@ -2,6 +2,8 @@ import * as React from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import Home from '../Views/Home';
 import Analytic from '../Views/Analytics';
+
+// Routes
 const Routes: React.FC = () => {
     return (
         <>

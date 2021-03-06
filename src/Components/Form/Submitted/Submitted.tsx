@@ -1,9 +1,10 @@
 import React from 'react';
 import './Submitted.scss';
-import {hacker} from '../../../Props/Props';
+import { hacker } from '../../../Props/Props';
 
-const Submitted:React.FC<hacker> = (response: hacker) => {
-    return(
+// The submissions are listed here
+const Submitted: React.FC<hacker> = (response: hacker) => {
+    return (
         <>
             <div className="form-results">
                 <div className="form-results-responses">Here are your Responses</div>
@@ -28,21 +29,25 @@ const Submitted:React.FC<hacker> = (response: hacker) => {
     );
 }
 
+
+// Unused function but this exists as a more efficient way to iterate through every method
+// Scrapped since it would be some field names look awkward and I didn't want to add another argument to this method
+// This could be refactored to include the name of the field Name so it could be used
 interface props {
     response: hacker,
     field: string
 }
 
-const SubmittedField = ({response, field}: props) => {
+const SubmittedField = ({ response, field }: props) => {
     function isObjKey<T>(key: any, obj: T): key is keyof T {
         return key in obj;
     }
-    return(
+    return (
         <>
-                <div className="form-field"> {field} </div>
-                <div className="form-field-response">{isObjKey(field,response) && response[field]}</div>
+            <div className="form-field"> {field} </div>
+            <div className="form-field-response">{isObjKey(field, response) && response[field]}</div>
         </>
     )
-} 
+}
 
 export default Submitted;

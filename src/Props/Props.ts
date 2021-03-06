@@ -1,3 +1,4 @@
+// This is the props that the hackers use
 export interface hacker {
     firstName: string,
     lastName: string,
@@ -10,11 +11,13 @@ export interface hacker {
     anythingElse: string
 }
 
+// This data is the json response with id
 export interface hackerData {
     id: string,
     data: hacker
 }
 
+// This is the results from a /getHackers
 export interface hackerResults {
     results: hackerData[],
     statusCode: number,
@@ -22,30 +25,9 @@ export interface hackerResults {
     count?: number
 }
 
+// This is the response from creating a new Hacker /createHacker
 export interface newHacker {
     id?: string,
     statusCode: number,
     message: string
-}
-
-export interface hackerForm {
-    shortAnswer: shortAnswer;
-    longAnswer: longAnswer;
-};
-
-export interface shortAnswer {
-    firstName: string;
-    lastName: string;
-    email: string;
-    age: number;
-    genderChoice: string;
-    gender: string;
-    isUCSC: string;
-    school: string;
-    major: string;
-}
-
-export interface longAnswer {
-    whyCruzHacks: string;
-    anythingElse: string;
 }

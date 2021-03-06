@@ -12,6 +12,7 @@ import routeData from 'react-router';
 
 Enzyme.configure({ adapter: new Adapter() });
 
+// Test Shallow Render on All Components
 
 describe('App Renders', () => {
   it('Home renders', () => {

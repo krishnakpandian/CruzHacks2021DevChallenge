@@ -2,7 +2,8 @@ import React from 'react';
 import './Navbar.scss';
 import { Link, useLocation } from "react-router-dom";
 
-const Navbar:React.FC = () => {
+// Renders the Navbar
+const Navbar: React.FC = () => {
     const location = useLocation()
     return (
         <>
@@ -12,9 +13,9 @@ const Navbar:React.FC = () => {
                 </div>
                 <div className="navbar-route">
                     {location.pathname !== "/analytics" ?
-                    <Link to="/analytics">Analytics</Link>
-                    :
-                    <Link to="/">Home</Link>
+                        <Link to="/analytics">Analytics</Link>
+                        :
+                        <Link to="/">Home</Link>
                     }
                 </div>
             </div>

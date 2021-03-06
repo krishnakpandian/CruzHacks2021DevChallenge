@@ -7,7 +7,7 @@ interface props {
     watchUniversity: any,
     watcher: any
 }
-
+// Renders all the Short Responses and sets the form data
 const ShortAnswer:React.FC<props> = ({register, watchGender, watchUniversity, watcher}: props) => {
     console.log(watcher);
     return(
@@ -18,7 +18,6 @@ const ShortAnswer:React.FC<props> = ({register, watchGender, watchUniversity, wa
                         <label htmlFor="firstName">First Name *</label>
                         <input type="text" maxLength={25} id="firstName" name="firstName" ref={register({required: true})}/>
                         <div className="the-count">
-                            <span className="current">{}</span>
                             <span className="maximum">{watcher.firstName ? watcher.firstName.length: 0}/ 25</span>
                         </div>
                     </div>
@@ -26,7 +25,6 @@ const ShortAnswer:React.FC<props> = ({register, watchGender, watchUniversity, wa
                         <label htmlFor="lastName">Last Name *</label>
                         <input type="text" maxLength={25} id="lastName" name="lastName" ref={register({required: true})}/>
                         <div className="the-count">
-                            <span className="current">{}</span>
                             <span className="maximum">{watcher.lastName ? watcher.lastName.length: 0}/ 25</span>
                         </div>
                     </div>
