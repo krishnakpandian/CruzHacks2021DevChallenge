@@ -1,46 +1,26 @@
-# Getting Started with Create React App
+# CruzHacks 2021-2022 Frontend Engineering Challenge
+## Setup and Installation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This react app was developed with typescript and yarn.
+This application was intended to be run with the following backend.
 
-## Available Scripts
+You can access the live site here.
+https://cruzhacks2021demo.web.app/
 
-In the project directory, you can run:
+`git clone <repo-name>`
 
-### `yarn start`
+Run `yarn` to get install the required modules
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Add a dotenv with the following information
+```  
+REACT_APP_BACKEND=www.endpoint.url
+```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## How to Run
+   * Tested with Node v10.15.1
+   * Run Server `yarn start`
+   * Run Jest Test `yarn test`
+   * Create a Build `yarn build`
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Design Improvements
+The frontend challenge was fairly and I tried to design a UI that would be simple to use. This year I kept my code very modular and I didn't really run into any issues. The hardest part of this challenge was trying to figure out a design that looked nice and and was intuitive. I guess this is why we have designers. I think my final design was pretty nice overall considering I built it from scratch but I did take some inspiration color wise from last year's website. I did leave 2 warning of unused components but that's not too big. This app was designed to scale for all screen sizes greater than the Iphone SE. I'm again pretty happy with the design and there were some more functionality I could have implemented but hopefully I will have that opportunity next year on the CruzHacks dev team.
