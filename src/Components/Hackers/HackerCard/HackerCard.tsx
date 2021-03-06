@@ -1,6 +1,7 @@
 import React from 'react';
 import './HackerCard.scss';
 import { hackerData } from '../../../Props/Props';
+import formLength from '../../../Props/formSchema.json';
 
 const HackerCard: React.FC<hackerData> = (prop: hackerData) => {
 
@@ -26,7 +27,7 @@ const HackerCard: React.FC<hackerData> = (prop: hackerData) => {
   // Takes in a string as an argument
   // Returns a new string that is truncated to the length specified
   const shortenText = (message: string, maxLength: number) => {
-    if (message && message.length > maxLength) {
+    if (message && message.length > maxLength + 1) {
       return message.slice(0, maxLength) + '...';
     }
     return message;
@@ -35,14 +36,14 @@ const HackerCard: React.FC<hackerData> = (prop: hackerData) => {
     <>
       <div className="HackerCard">
         <div className="name" style={dynamicHeaderFontSize(prop.data.firstName + ' ' + prop.data.lastName)}>
-          {shortenText(prop.data.firstName + ' ' + prop.data.lastName, 50)}
+          {shortenText(prop.data.firstName + ' ' + prop.data.lastName, formLength['firstName'] + formLength['lastName'])}
         </div>
         <div className="lower-container">
-          <div className="email">{shortenText(prop.data.email, 50)}</div>
-          <div className="major">{shortenText(prop.data.major, 50)}</div>
-          <div className="school">{shortenText(prop.data.school, 50)}</div>
-          <div className="age"> {shortenText(String(prop.data.age), 4)}</div>
-          <div className="gender">{shortenText(prop.data.gender, 25)}</div>
+          <div className="email">{shortenText(prop.data.email, formLength['email'])}</div>
+          <div className="major">{shortenText(prop.data.major, formLength['major'])}</div>
+          <div className="school">{shortenText(prop.data.school, formLength['school'])}</div>
+          <div className="age"> {shortenText(String(prop.data.age), formLength['age'])}</div>
+          <div className="gender">{shortenText(prop.data.gender, formLength['gender'])}</div>
 
         </div>
       </div>

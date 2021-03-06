@@ -31,7 +31,7 @@ const Form: React.FC = () => {
     const [loading, setloading] = useState<boolean>(false);
     const [hackerResponse, setHackerResponse] = useState<hacker>(initialHacker);
     const [error, setError] = useState<string>('');
-    const { register, watch, handleSubmit } = useForm<hackerForm>();
+    const { register, watch, handleSubmit, errors } = useForm<hackerForm>({mode: 'onBlur'});
     const watchGender = watch("genderChoice");
     const watchUniversity = watch("isUCSC");
     const watcher = watch();
@@ -50,7 +50,7 @@ const Form: React.FC = () => {
             age: data.age,
             school: data.isUCSC === 'true' ? 'UC Santa Cruz' : data.school,
             major: data.major,
-            gender: data.genderChoice === 'other' ? data.gender : data.genderChoice,
+            gender: data.genderChoice === 'Other' ? data.gender : data.genderChoice,
             whyCruzHacks: data.whyCruzHacks,
             anythingElse: data.anythingElse
         }
@@ -90,8 +90,9 @@ const Form: React.FC = () => {
                 {!submitted && <>
                     <div className="error">{error}</div>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        <ShortAnswer {...{ register, watchGender, watchUniversity, watcher }} />
-                        <LongAnswer {...{ register, watcher }} />
+                        {errors.firstName && <> Hello World</>}
+                        <ShortAnswer {...{ register, watchGender, watchUniversity, watcher, errors }} />
+                        <LongAnswer {...{ register, watcher, errors }} />
                         <button className="submit" disabled={loading} type="submit">Submit</button>
                     </form>
                 </>

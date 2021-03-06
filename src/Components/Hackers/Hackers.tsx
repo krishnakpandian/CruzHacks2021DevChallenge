@@ -17,7 +17,7 @@ const Hackers: React.FC = () => {
     const [results, setResults] = useState<hackerResults>(initial);
     // Gets the list of Hackers
     useEffect(() => {
-        getHackers().then(res => { setResults(res); console.log(res) });
+        getHackers().then(res => { setResults(res)});
     }, [])
     return (
         <>

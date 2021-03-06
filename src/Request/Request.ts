@@ -15,7 +15,6 @@ export async function getHackers(): Promise<hackerResults> {
         method: 'GET',
         headers: { 'Content-type': 'application/json' }
     }).then(res => res.json()).then(data => {
-        console.log(data);
         response.results = data['results'].map((obj: hackerData) => ({ ...obj }));
         response.statusCode = data['statusCode'];
         response.message = data['message'];
