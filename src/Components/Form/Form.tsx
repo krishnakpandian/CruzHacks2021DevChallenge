@@ -90,7 +90,6 @@ const Form: React.FC = () => {
                 {!submitted && <>
                     <div className="error">{error}</div>
                     <form onSubmit={handleSubmit(onSubmit)}>
-                        {errors.firstName && <> Hello World</>}
                         <ShortAnswer {...{ register, watchGender, watchUniversity, watcher, errors }} />
                         <LongAnswer {...{ register, watcher, errors }} />
                         <button className="submit" disabled={loading} type="submit">Submit</button>
